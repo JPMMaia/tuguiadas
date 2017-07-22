@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        transform.GetComponent<Button>().onClick.AddListener(TaskOnClick);
     }
 
     // Update is called once per frame
@@ -24,8 +25,19 @@ public class Item : MonoBehaviour
             transform.GetChild(1).GetComponent<Text>().text = ValueBuy.ToString();
     }
 
-    void TaskOnClick()
+    public void TaskOnClick()
     {
-        transform.parent.GetComponent<InventoryManager>().SetSelected(this.gameObject);
+        if (transform.GetChild(0).GetComponent<Text>().fontSize == 18)
+        {
+            transform.parent.GetComponent<InventoryManager>().SetSelected(this.gameObject);
+            transform.GetChild(0).GetComponent<Text>().fontSize = 20;
+            transform.GetChild(0).GetComponent<Text>().fontStyle = FontStyle.Bold;
+        }
+        else if (transform.GetChild(0).GetComponent<Text>().fontSize == 20)
+        {
+            transform.parent.GetComponent<InventoryManager>().UnsetSelected(this.gameObject);
+            transform.GetChild(0).GetComponent<Text>().fontSize = 18;
+            transform.GetChild(0).GetComponent<Text>().fontStyle = FontStyle.Normal;
+        }
     }
 }
