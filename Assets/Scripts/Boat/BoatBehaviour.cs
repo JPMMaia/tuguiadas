@@ -11,9 +11,9 @@ namespace Boat
         }
 
         public void Update() {
-            this.transform.Translate(Vector3.forward * (Input.GetAxis("Vertical") * 4.0f) * Time.deltaTime);
+            this.transform.Translate(new Vector3(1.0f, 0.0f, 0.0f) * (Input.GetAxis("Vertical") * 4.0f) * Time.deltaTime, Space.Self);
             if(Input.GetAxis("Vertical") > 0.0f || Input.GetAxis("Vertical") < -0.0f)
-                this.transform.Rotate(0.0f, Input.GetAxis("Horizontal") * 40.0f * Time.deltaTime, 0.0f);
+                this.transform.Rotate(0.0f, 0.0f, Input.GetAxis("Horizontal") * 40.0f * Time.deltaTime);
         }
     }
 }
