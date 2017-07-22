@@ -1,4 +1,5 @@
-﻿using Collision;
+﻿using System;
+using Collision;
 using UnityEngine;
 
 namespace Ports
@@ -6,6 +7,7 @@ namespace Ports
     public class PortView : MonoBehaviour
     {
         public TriggerCollider RangeArea;
+        public String Name { get; set; }
 
         public void Awake()
         {
