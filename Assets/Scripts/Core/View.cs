@@ -1,4 +1,6 @@
-﻿namespace Core
+﻿using Ports;
+
+namespace Core
 {
     public class View : Entity
     {
