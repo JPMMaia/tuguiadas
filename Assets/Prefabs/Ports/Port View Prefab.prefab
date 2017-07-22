@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4273613956888726}
   - component: {fileID: 114503696350838712}
   m_Layer: 0
-  m_Name: Port View
+  m_Name: Port View Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
