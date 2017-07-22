@@ -1,8 +1,9 @@
 ﻿using Core;
+using UnityEngine;
 
 namespace Ports
 {
-    public class Port : Entity
+    public class PortModel : MonoBehaviour
     {
         public float Radius { get; set; }
     }
