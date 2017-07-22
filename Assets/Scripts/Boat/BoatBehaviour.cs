@@ -4,7 +4,7 @@ namespace Boat
 {
     public class BoatBehaviour : MonoBehaviour
     {
-        public int speed;
+        //public Camera cam;
 
         public void Start() {
             
