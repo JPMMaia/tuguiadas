@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
-    GameObject selected;
+    ArrayList selectedItems;
 
     // Use this for initialization
     void Start()
@@ -19,11 +20,19 @@ public class InventoryManager : MonoBehaviour
 
     public void SetSelected(GameObject obj)
     {
-        selected = obj;
+        selectedItems.Add(obj);
     }
 
-    public GameObject GetSelected()
+    public void UnsetSelected(GameObject obj)
     {
-        return selected;
+        foreach(GameObject gameObject in selectedItems)
+            if(obj == gameObject)
+                selectedItems.Remove(obj);
     }
+
+    public ArrayList GetSelected()
+    {
+        return selectedItems;
+    }
+
 }
