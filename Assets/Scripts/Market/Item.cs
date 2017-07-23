@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    string Name = "Apple";
-    string Culture = "Japan";
-    int ValueBuy = 50;
-    int ValueSell = 40;
+    public string Name = "Apple";
+    public string Culture = "Japan";
+    public int ValueBuy = 50;
+    public int ValueSell = 40;
 
     // Use this for initialization
     void Start()
