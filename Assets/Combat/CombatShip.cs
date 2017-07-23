@@ -11,16 +11,20 @@ public class CombatShip : MonoBehaviour {
 
     public Transform starboard;
     public Transform port;
+    AudioSource audioSrc;
+
 
     private float starboardCD = 0.0f;
     private float portCD = 0.0f;
 
     public GameObject cannonBall;
+    public GameObject muzzleParticle;
 
 	// Use this for initialization
 	void Start () {
-        
-	}
+        audioSrc = GetComponent<AudioSource>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,7 +36,15 @@ public class CombatShip : MonoBehaviour {
 
 
         UpdateCooldowns();
-	}
+
+
+        if (hullIntegrity < 0)
+        {
+            Debug.Log("MORRRRRRRRRRRRRIIIIIIIIIIIIIIIIIIIII!");
+            Destroy(gameObject);
+        }
+    }
+
     void UpdateCooldowns()
     {
         starboardCD -= Time.deltaTime;
@@ -64,13 +76,20 @@ public class CombatShip : MonoBehaviour {
         for (int i = 0; i < nPortCannons; i++)
         {
             var sideTransform = (fireFromPort ? port : starboard);
-                GameObject projectile = Instantiate(cannonBall,
+
+            Vector3 firePos =
                Random.Range(-1f, 1f) * sideTransform.forward +
                Random.Range(-1f, 1f) * sideTransform.right
-               + sideTransform.position,
-               Quaternion.identity);
+               + sideTransform.position;
 
-                projectile.GetComponent<Rigidbody>().velocity = (fireFromPort ? -1 : 1) * transform.right * Random.Range(10, 15) + transform.up * Random.Range(6, 8) + transform.forward*Random.Range(-2,2);
+                GameObject projectile = Instantiate(cannonBall,
+                    firePos,
+                    Quaternion.identity);
+
+            projectile.GetComponent<Rigidbody>().velocity = (fireFromPort ? -1 : 1) * transform.right * Random.Range(15, 25) + transform.up * Random.Range(6, 8) + transform.forward*Random.Range(-2,2);
+
+            audioSrc.PlayOneShot(audioSrc.clip,1);
+            Instantiate(muzzleParticle, firePos, sideTransform.rotation);
             
 
             yield return new WaitForSeconds(0.05f);

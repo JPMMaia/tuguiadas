@@ -406,9 +406,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114105261677387466, guid: 0053f0086d561574fa98f32450ab2750,
+        type: 2}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1010845836}
+    - target: {fileID: 114105261677387466, guid: 0053f0086d561574fa98f32450ab2750,
+        type: 2}
+      propertyPath: fogSample
+      value: 
+      objectReference: {fileID: 1895346349808468, guid: e7ef65d95f2bac14ba8fd0f80da784de,
+        type: 2}
+    - target: {fileID: 114105261677387466, guid: 0053f0086d561574fa98f32450ab2750,
+        type: 2}
+      propertyPath: fogSampleSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114105261677387466, guid: 0053f0086d561574fa98f32450ab2750,
+        type: 2}
+      propertyPath: fogSize
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0053f0086d561574fa98f32450ab2750, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1010845836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1284717900296054, guid: 6f0543acb74b0c24d8073d75a8803c78,
+    type: 2}
+  m_PrefabInternal: {fileID: 158802509}
 --- !u!1 &1055067952
 GameObject:
   m_ObjectHideFlags: 0
