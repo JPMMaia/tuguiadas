@@ -11,5 +11,8 @@ namespace Merchant
         public Button BuyButton;
         public Button SellButton;
         public Button ExitButton;
+        public Button HealCrewButton;
+        public Button BuyFoodButton;
+        public Button BuyAmmoButton;
     }
 }

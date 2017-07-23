@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Core;
+using State;
 using UnityEngine;
 
-public class CombatShip : MonoBehaviour {
+public class CombatShip : Entity {
 
-    public float hullIntegrity;
+    public float hullIntegrity
+    {
+        get { return FindObjectOfType<PlayerState>().CrewHealth; }
+        set { FindObjectOfType<PlayerState>().CrewHealth = value; }
+    }
     public int nCannons;
     public float cannonBallDamage;
     public float cannonRof;
@@ -54,18 +60,24 @@ public class CombatShip : MonoBehaviour {
     }
     void FirePort()
     {
-        if (portCD <= 0)
+        var playerState = FindObjectOfType<PlayerState>();
+        if (portCD <= 0 && playerState.Ammo > 0)
         {
             StartCoroutine(firePortSide(true));
             portCD = 1 / cannonRof;
+
+            playerState.Ammo--;
         }
     }
     void FireStarboard()
     {
-        if (starboardCD <= 0)
+        var playerState = FindObjectOfType<PlayerState>();
+        if (starboardCD <= 0 && playerState.Ammo > 0)
         {
             StartCoroutine(firePortSide(false));
             starboardCD = 1 / cannonRof;
+
+            playerState.Ammo--;
         }
 
     }

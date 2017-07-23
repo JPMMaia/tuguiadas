@@ -31,6 +31,7 @@ namespace State
             if (SceneManager.GetActiveScene().name == "Default")
             {
                 HandleFood();
+                HandleCrewHealth();
             }
         }
 
@@ -41,6 +42,13 @@ namespace State
 
             // Check for game over condition:
             if (Food <= 0.0f)
+                SceneManager.LoadScene("Game Over");
+        }
+
+        private void HandleCrewHealth()
+        {
+            // Check for game over condition:
+            if (CrewHealth <= 0.0f)
                 SceneManager.LoadScene("Game Over");
         }
     }
