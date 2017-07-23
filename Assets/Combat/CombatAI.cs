@@ -66,59 +66,62 @@ public class CombatAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        distToTarget = Vector3.Distance(target.position, transform.position);
-        switch (currentState)
-        {
-            case AIState.Chase:
-                NavMeshPath p = new NavMeshPath() ;
-                agent.CalculatePath(target.position, p);
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(p.corners[1] - transform.position, transform.up),.5f*Time.deltaTime);
+        if (target != null) {
 
-                
+            distToTarget = Vector3.Distance(target.position, transform.position);
+            switch (currentState)
+            {
+                case AIState.Chase:
+                    NavMeshPath p = new NavMeshPath();
+                    agent.CalculatePath(target.position, p);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(p.corners[1] - transform.position, transform.up), .5f * Time.deltaTime);
 
-                agent.destination = target.position;
 
-                if (distToTarget < ShootingDist)
-                    currentState = AIState.Engaged;
-                break;
-            case AIState.Engaged:
 
-                if (distToTarget > ShootingDist)
-                    currentState = AIState.Chase;
+                    //agent.destination = target.position;
 
-                // Allign ship's broadside
-                Vector3 toTarget = target.position - transform.position;
-                ang = Vector3.Angle(toTarget, transform.forward);
-                if (ang < 90)
-                {
-                    if (Mathf.Abs(AngleSigned( toTarget, -transform.right, transform.up))
-                        < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
+                    if (distToTarget < ShootingDist)
+                        currentState = AIState.Engaged;
+                    break;
+                case AIState.Engaged:
+
+                    if (distToTarget > ShootingDist)
+                        currentState = AIState.Chase;
+
+                    // Allign ship's broadside
+                    Vector3 toTarget = target.position - transform.position;
+                    ang = Vector3.Angle(toTarget, transform.forward);
+                    if (ang < 90)
                     {
-                        ang = 1;
-                        //Debug.Log("Turning Right");
-                    }
-                    else
+                        if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
+                            < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
+                        {
+                            ang = 1;
+                            //Debug.Log("Turning Right");
+                        }
+                        else
+                        {
+                            ang = -1;
+                            //Debug.Log("Turning Left");
+                        }
+                    } else
                     {
-                        ang = -1;
-                        //Debug.Log("Turning Left");
+                        if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
+                            < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
+                        {
+                            ang = -1;
+                            //Debug.Log("Turning Left");
+                        }
+                        else
+                        {
+                            ang = 1;
+                            //Debug.Log("Turning Right");
+                        }
                     }
-                } else
-                {
-                    if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
-                        < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
-                    {
-                        ang = -1;
-                        //Debug.Log("Turning Left");
-                    }
-                    else
-                    {
-                        ang = 1;
-                        //Debug.Log("Turning Right");
-                    }
-                }
-                
-                break;
 
+                    break;
+
+            }
         }
 
         UpdateCooldowns();
@@ -134,6 +137,9 @@ public class CombatAI : MonoBehaviour {
 
     void FixedUpdate()
     {
+
+        rigidbody.AddForce(transform.forward * 3f);
+
         rigidbody.AddForce(manager.windDirection * manager.windStrength, ForceMode.Acceleration);
         rigidbody.AddTorque(transform.up * ang * 1.5f);
 

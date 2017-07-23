@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 114778697642045980}
   - component: {fileID: 114343081008215910}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 114286623549049946}
   - component: {fileID: 114359700162185912}
   m_Layer: 5
-  m_Name: SellButton
+  m_Name: BuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114237435802902722}
   m_HandleRect: {fileID: 224454264035835276}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1400,6 +1400,9 @@ MonoBehaviour:
   PlayerInventoryContainer: {fileID: 224637715376625650}
   PortInventoryContainer: {fileID: 224741927163714804}
   GoldText: {fileID: 114209052216771632}
+  BuyButton: {fileID: 114286623549049946}
+  SellButton: {fileID: 114132595785064928}
+  ExitButton: {fileID: 114778697642045980}
 --- !u!114 &114771613983003640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1480,7 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.36862746, g: 0.42352945, b: 0.3921569, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1599,7 +1602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.6117647, g: 0.5803922, b: 0.4901961, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2183,7 +2186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000034937566, y: -0.000020429492}
+  m_AnchoredPosition: {x: 0.000034937566, y: -0.000028654933}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224654633352194454
@@ -2243,7 +2246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000034937566, y: -0.000020429492}
+  m_AnchoredPosition: {x: 0.000034937566, y: -0.00006264448}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224751423882880790
