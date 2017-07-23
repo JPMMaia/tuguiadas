@@ -22,5 +22,10 @@ namespace Currency
         {
             _id = _count++;
         }
+
+        public float CalculateSellPrice(Culture portCulture)
+        {
+            return OriginalPrice * (Culture == portCulture ? 0.8f : 1.2f);
+        }
     }
 }

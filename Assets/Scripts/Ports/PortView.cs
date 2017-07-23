@@ -16,6 +16,8 @@ namespace Ports
 
         public void Awake()
         {
+            //DontDestroyOnLoad(gameObject);
+
             RangeArea.OnEnter += RangeArea_OnEnter;
             RangeArea.OnExit += RangeArea_OnExit;
 
@@ -51,7 +53,7 @@ namespace Ports
             Debug.Log("Enter port!");
 
             // Present merchant view:
-            Application.Presenter.MerchantPresenter.Present(Application.Model.PlayerState.Inventory, Inventory);
+            Application.Presenter.MerchantPresenter.Present(Culture, Application.Model.PlayerState.Inventory, Inventory);
         }
         private void RangeArea_OnExit(object sender, TriggerCollider.CollisionEventArgs e)
         {
