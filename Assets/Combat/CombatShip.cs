@@ -11,7 +11,8 @@ public class CombatShip : MonoBehaviour {
 
     public Transform starboard;
     public Transform port;
-    AudioSource audioSrc;
+    public AudioSource audioCannon;
+    public AudioSource audioWood;
 
 
     private float starboardCD = 0.0f;
@@ -22,7 +23,7 @@ public class CombatShip : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        audioSrc = GetComponent<AudioSource>();
+        audioCannon = GetComponent<AudioSource>();
 
     }
 	
@@ -88,10 +89,28 @@ public class CombatShip : MonoBehaviour {
 
             projectile.GetComponent<Rigidbody>().velocity = (fireFromPort ? -1 : 1) * transform.right * Random.Range(15, 25) + transform.up * Random.Range(6, 8) + transform.forward*Random.Range(-2,2);
 
-            audioSrc.PlayOneShot(audioSrc.clip,1);
+            audioCannon.PlayOneShot(audioCannon.clip);
             Instantiate(muzzleParticle, firePos, sideTransform.rotation);
             
 
+            yield return new WaitForSeconds(2f/ nPortCannons);
+        }
+
+        yield return null;
+    }
+
+    public void BreakWood()
+    {
+
+        StartCoroutine(woodBreaking());
+    }
+
+    IEnumerator woodBreaking()
+    {
+
+        for (int i = 0; i < 5; i++)
+        {
+            audioWood.PlayOneShot(audioWood.clip);
             yield return new WaitForSeconds(0.05f);
         }
 

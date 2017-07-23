@@ -27,6 +27,7 @@ public class Projectile : MonoBehaviour {
         if (collision.gameObject.GetComponent<CombatShip>())
         {
             collision.gameObject.GetComponent<CombatShip>().hullIntegrity -= projDmg;
+            collision.gameObject.GetComponent<CombatShip>().BreakWood();
         }
 
         if (collision.gameObject.GetComponent<CombatAI>())
