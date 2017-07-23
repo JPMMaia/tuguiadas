@@ -128,11 +128,9 @@ public class CombatAI : MonoBehaviour {
 
         if (hullIntegrity < 0)
         {
-            Debug.Log("MATARAM-ME!");
-
-            manager.removeEnemy(gameObject);
-
-            Destroy(gameObject);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            if (agent.transform.position.y < 20)
+                Destroy(gameObject);
         }
 	}
 
