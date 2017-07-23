@@ -658,8 +658,8 @@ MonoBehaviour:
   ShootingDist: 30
   hullIntegrity: 100
   nCannons: 40
-  cannonBallDamage: 2
-  cannonRof: 0.2
+  cannonBallDamage: 5
+  cannonRof: 0.4
   starboard: {fileID: 4795181255497064}
   port: {fileID: 4959398192987350}
   cannonBall: {fileID: 1784675733708098, guid: be6c52e41ccd6f040be6c5456cddd17e, type: 2}
