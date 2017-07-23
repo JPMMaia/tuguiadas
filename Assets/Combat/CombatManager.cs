@@ -54,6 +54,7 @@ public class CombatManager : MonoBehaviour {
 
         if (enemyList.Count <= 0)
         {
+            Debug.Log("OMGLEAVEBITCH");
             UnityEngine.SceneManagement.SceneManager.LoadScene("Default");
         }
 
