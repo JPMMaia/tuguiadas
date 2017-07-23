@@ -2,6 +2,7 @@
 using Collision;
 using Core;
 using UnityEngine;
+using System.Collections;
 
 namespace Ports
 {
@@ -20,10 +21,10 @@ namespace Ports
         private void RangeArea_OnEnter(object sender, TriggerCollider.CollisionEventArgs e)
         {
             Debug.Log("Enter port!");
-
             // TODO Generate port inventory based on the culture:
 
             // TODO Present merchant view:
+            Resources.Load("Resources/Market/Inventory");
         }
         private void RangeArea_OnExit(object sender, TriggerCollider.CollisionEventArgs e)
         {
