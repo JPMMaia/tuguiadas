@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace State
 {
@@ -7,7 +6,7 @@ namespace State
     {
         public float InitialMoney = 500.0f;
         public float CurrentMoney;
-        private Inventory _inventory = new Inventory();
+        public Inventory Inventory;
 
         public void Awake()
         {
