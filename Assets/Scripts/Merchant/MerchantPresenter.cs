@@ -14,6 +14,7 @@ namespace Merchant
         public void Present(Inventory playerInventory, Inventory portInventory)
         {
             _view = Instantiate(MerchantViewPrefab, Application.View.SuperiorCanvas.transform);
+            _view.ExitButton.onClick.AddListener(OnViewExit);
 
             FillPlayerInventory(playerInventory);
             FillPortInventory(portInventory);
@@ -39,6 +40,11 @@ namespace Merchant
                 itemView.QuantityText.text = item.Quantity.ToString();
                 itemView.ValueText.text = item.OriginalPrice.ToString(CultureInfo.InvariantCulture);
             }
+        }
+
+        public void OnViewExit()
+        {
+            Destroy(_view.gameObject);
         }
     }
 }

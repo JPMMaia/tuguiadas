@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 114778697642045980}
   - component: {fileID: 114343081008215910}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   PlayerInventoryContainer: {fileID: 224637715376625650}
   PortInventoryContainer: {fileID: 224741927163714804}
   GoldText: {fileID: 114209052216771632}
+  ExitButton: {fileID: 114778697642045980}
 --- !u!114 &114771613983003640
 MonoBehaviour:
   m_ObjectHideFlags: 1
