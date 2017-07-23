@@ -5,6 +5,9 @@ namespace Core
 {
     public class Model : Entity
     {
-        public PlayerState PlayerState;
+        public PlayerState PlayerState
+        {
+            get { return FindObjectOfType<PlayerState>(); }
+        }
     }
 }

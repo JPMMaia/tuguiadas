@@ -6307,6 +6307,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0053f0086d561574fa98f32450ab2750, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &957395706 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1436544243175784, guid: 0053f0086d561574fa98f32450ab2750,
+    type: 2}
+  m_PrefabInternal: {fileID: 957395705}
 --- !u!1 &971797624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,8 +6783,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1263693426}
+  m_Children: []
   m_Father: {fileID: 1658383063}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6794,7 +6798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748b6635f45cb074f80166febeed13cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerState: {fileID: 1500804240}
+  PlayerState: {fileID: 0}
 --- !u!1 &1065349596
 GameObject:
   m_ObjectHideFlags: 0
@@ -8174,11 +8178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuperiorCanvas: {fileID: 914932916}
---- !u!4 &1263693426 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1500804239}
+  Boat: {fileID: 957395706}
 --- !u!1001 &1276725805
 Prefab:
   m_ObjectHideFlags: 0
@@ -9377,69 +9377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda29069f8e3cc24c8c76ff537b16f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1500804239
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1055067953}
-    m_Modifications:
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676136790085502, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114737460614197062, guid: b768032bcaa0bff43ba85b47624786f9,
-        type: 2}
-      propertyPath: FoodDecrementScaler
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114737460614197062, guid: b768032bcaa0bff43ba85b47624786f9,
-        type: 2}
-      propertyPath: Food
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114737460614197062, guid: b768032bcaa0bff43ba85b47624786f9,
-        type: 2}
-      propertyPath: FoodCapacity
-      value: 100
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b768032bcaa0bff43ba85b47624786f9, type: 2}
-  m_IsPrefabParent: 0
---- !u!114 &1500804240 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114737460614197062, guid: b768032bcaa0bff43ba85b47624786f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1500804239}
-  m_Script: {fileID: 11500000, guid: de2623e6dc3f7484ab951128c1901edf, type: 3}
 --- !u!1001 &1504407082
 Prefab:
   m_ObjectHideFlags: 0

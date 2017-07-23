@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 
-public class CombatManager : MonoBehaviour {
+public class CombatManager : Entity {
 
     public Vector3 windDirection;
     public float windStrength;
@@ -49,12 +50,12 @@ public class CombatManager : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        
-
-        if (enemyList.Count <= 0)
+	void Update ()
+    {    
+        if (enemyList.Count <= 0 || Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("OMGLEAVEBITCH");
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneManager_sceneLoaded;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Default");
         }
 
@@ -62,6 +63,11 @@ public class CombatManager : MonoBehaviour {
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
-		
 	}
+
+    private void SceneManager_sceneLoaded(UnityEngine.SceneManagement.Scene arg0, UnityEngine.SceneManagement.LoadSceneMode arg1)
+    {
+        if(arg0.name == "Default")
+            Application.View.Boat.transform.position = Application.Model.PlayerState.PositionBeforeBattle;
+    }
 }

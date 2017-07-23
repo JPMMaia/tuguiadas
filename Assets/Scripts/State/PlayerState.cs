@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace State
 {
     public class PlayerState : MonoBehaviour
     {
+        public Vector3 PositionBeforeBattle;
+
         public float InitialMoney = 500.0f;
         public float CurrentMoney;
         public float FoodCapacity = 500.0f;
