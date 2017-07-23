@@ -11,6 +11,7 @@ namespace Ports
         public TriggerCollider RangeArea;
         public String Name;
         public Culture Culture;
+        public PortInventory Inventory;
 
         public void Awake()
         {
@@ -21,7 +22,9 @@ namespace Ports
         private void RangeArea_OnEnter(object sender, TriggerCollider.CollisionEventArgs e)
         {
             Debug.Log("Enter port!");
+
             // TODO Generate port inventory based on the culture:
+
 
             // TODO Present merchant view:
             Resources.Load("Resources/Market/Inventory");
