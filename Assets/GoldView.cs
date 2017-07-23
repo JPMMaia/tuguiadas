@@ -1,6 +1,7 @@
 ﻿using Core;
 using System.Collections;
 using System.Collections.Generic;
+using State;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class GoldView : Entity {
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = Application.Model.PlayerState.CurrentMoney.ToString();
+        var playerState = FindObjectOfType<PlayerState>();
+        text.text = playerState.CurrentMoney.ToString();
 	}
 }

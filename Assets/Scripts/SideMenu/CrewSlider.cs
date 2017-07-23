@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Core;
+using State;
 
 public class CrewSlider : Entity
 {
@@ -15,7 +16,7 @@ public class CrewSlider : Entity
     // Update is called once per frame
     void Update()
     {
-        var playerState = Application.Model.PlayerState;
+        var playerState = FindObjectOfType<PlayerState>();
         crewSlider.value = (float)playerState.CrewHealth / playerState.CrewMaxHealth;
     }
 }
