@@ -22,11 +22,13 @@ public class MarketManager : MonoBehaviour {
 
     void GoLeft()
     {
-        inv.GetComponent<InventoryManager>().GetSelected().transform.SetParent(mark.transform);
+        foreach(GameObject item in inv.GetComponent<InventoryManager>().GetSelected())
+            item.transform.SetParent(mark.transform);
     }
 
     void GoRight()
     {
-        mark.GetComponent<InventoryManager>().GetSelected().transform.SetParent(inv.transform);
+        foreach(GameObject item in mark.GetComponent<InventoryManager>().GetSelected())
+            item.transform.SetParent(inv.transform);
     }
 }
