@@ -18,7 +18,14 @@ namespace Ports
 
         private void RangeArea_OnEnter(object sender, TriggerCollider.CollisionEventArgs e)
         {
+            if (Time.timeSinceLevelLoad < 0.1f)
+                return;
+
             Debug.Log("A wild fleet appeared!!");
+
+            // Save position of boat:
+            var playerState = Application.Model.PlayerState;
+            playerState.PositionBeforeBattle = transform.position;
 
             // Start combat
             UnityEngine.SceneManagement.SceneManager.LoadScene("Combat");
@@ -26,7 +33,6 @@ namespace Ports
 
         private void RangeArea_OnExit(object sender, TriggerCollider.CollisionEventArgs e)
         {
-            Debug.Log("Exit port!");
         }
     }
 }

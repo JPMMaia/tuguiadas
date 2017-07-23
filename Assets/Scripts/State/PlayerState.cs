@@ -1,19 +1,23 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace State
 {
     public class PlayerState : MonoBehaviour
     {
+        public Vector3 PositionBeforeBattle;
+
         public float InitialMoney = 500.0f;
         public float CurrentMoney;
-        public int FoodCapacity = 500;
-        public int Food;
+        public float FoodCapacity = 500.0f;
+        public float Food;
         public int AmmoCapacity = 500;
         public int Ammo;
         public float CrewMaxHealth = 100;
         public float CrewHealth;
         public Inventory Inventory;
+
+        public float FoodDecrementScaler = 0.1f;
 
         public void Awake()
         {
@@ -22,20 +26,30 @@ namespace State
             CurrentMoney = InitialMoney;
         }
 
-        public void Buy(List<Item> list)
+        public void FixedUpdate()
         {
-            foreach (var item in list)
-                CurrentMoney -= item.ValueBuy;
-
-            //TODO: add list to the inventory
+            if (SceneManager.GetActiveScene().name == "Default")
+            {
+                HandleFood();
+                HandleCrewHealth();
+            }
         }
 
-        public void Sell(List<Item> list)
+        private void HandleFood()
         {
-            foreach (var item in list)
-                CurrentMoney += item.ValueSell;
+            // Decrease food along time:
+            Food -= FoodDecrementScaler * Time.fixedDeltaTime;
 
-            //TODO: remove list to the inventory
+            // Check for game over condition:
+            if (Food <= 0.0f)
+                SceneManager.LoadScene("Game Over");
+        }
+
+        private void HandleCrewHealth()
+        {
+            // Check for game over condition:
+            if (CrewHealth <= 0.0f)
+                SceneManager.LoadScene("Game Over");
         }
     }
 }

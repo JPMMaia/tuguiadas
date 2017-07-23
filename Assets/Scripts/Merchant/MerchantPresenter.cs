@@ -44,9 +44,39 @@ namespace Merchant
             _view.SellButton.onClick.AddListener(OnSellClick);
             _view.BuyButton.onClick.AddListener(OnBuyClick);
             _view.ExitButton.onClick.AddListener(OnViewExit);
+            _view.BuyFoodButton.onClick.AddListener(OnBuyFoodClicked);
+            _view.HealCrewButton.onClick.AddListener(OnHealCrewClicked);
+            _view.BuyAmmoButton.onClick.AddListener(OnBuyAmmoClicked);
 
             FillPlayerInventory(playerInventory);
             FillPortInventory(portInventory);
+        }
+
+        public void OnBuyFoodClicked()
+        {
+            var playerState = FindObjectOfType<PlayerState>();
+            if (!(playerState.CurrentMoney >= 100.0f)) return;
+
+            playerState.Food = playerState.FoodCapacity;
+            playerState.CurrentMoney -= 100.0f;
+        }
+
+        public void OnHealCrewClicked()
+        {
+            var playerState = FindObjectOfType<PlayerState>();
+            if (!(playerState.CurrentMoney >= 100.0f)) return;
+
+            playerState.CrewHealth = playerState.CrewMaxHealth;
+            playerState.CurrentMoney -= 100.0f;
+        }
+
+        public void OnBuyAmmoClicked()
+        {
+            var playerState = FindObjectOfType<PlayerState>();
+            if (!(playerState.CurrentMoney >= 100.0f)) return;
+
+            playerState.Ammo = playerState.AmmoCapacity;
+            playerState.CurrentMoney -= 100.0f;
         }
 
         public void Update()

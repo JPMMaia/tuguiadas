@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Core;
+using State;
 
 public class AmmoSlider : Entity
 {
@@ -15,7 +16,7 @@ public class AmmoSlider : Entity
     // Update is called once per frame
     void Update()
     {
-        var playerState = Application.Model.PlayerState;
+        var playerState = FindObjectOfType<PlayerState>();
         ammoSlider.value = (float)playerState.Ammo / playerState.AmmoCapacity;
     }
 }
