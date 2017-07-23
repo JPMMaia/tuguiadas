@@ -212,12 +212,22 @@ Prefab:
     - target: {fileID: 114875675659919920, guid: 1a578c3c4c725894dbc086cb6ed0caea,
         type: 2}
       propertyPath: cannonRof
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 114875675659919920, guid: 1a578c3c4c725894dbc086cb6ed0caea,
         type: 2}
       propertyPath: hullIntegrity
-      value: 10000000
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114937677379123278, guid: 1a578c3c4c725894dbc086cb6ed0caea,
+        type: 2}
+      propertyPath: fwdSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114937677379123278, guid: 1a578c3c4c725894dbc086cb6ed0caea,
+        type: 2}
+      propertyPath: turnSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a578c3c4c725894dbc086cb6ed0caea, type: 2}

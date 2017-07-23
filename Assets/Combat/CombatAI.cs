@@ -133,8 +133,12 @@ public class CombatAI : MonoBehaviour {
         } else {
             GetComponent<NavMeshAgent>().enabled = false;
             this.transform.position += new Vector3(0.0f, -2.0f * Time.deltaTime, 0.0f);
-            if (transform.position.y < -20)
+            if (transform.position.y < -10)
+            {
+                manager.removeEnemy(gameObject);
                 Destroy(gameObject);
+            }
+                
         }
 	}
 
