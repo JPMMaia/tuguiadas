@@ -23,6 +23,9 @@ namespace Currency
                 {
                     new ItemTypes { Name = "Ring", Material = "Gold", MinimunQuantity = 0, MaximunQuantity = 4, MinimunPrice = 100.0f, MaximunPrice = 300.0f },
                     new ItemTypes { Name = "Ring", Material = "Silver", MinimunQuantity = 0, MaximunQuantity = 7, MinimunPrice = 30.0f, MaximunPrice = 180.0f },
+                    new ItemTypes { Name = "Shield", Material = "Leather", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 150.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Shield", Material = "Wood", MinimunQuantity = 0, MaximunQuantity = 2, MinimunPrice = 150.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Sword", Material = "Iron", MinimunQuantity = 0, MaximunQuantity = 7, MinimunPrice = 100.0f, MaximunPrice = 200.0f }
                 }
             },
             {
@@ -42,13 +45,37 @@ namespace Currency
             {
                 Culture.Indian, new List<ItemTypes>
                 {
-                    new ItemTypes { Name = "Spoon", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Portable-cabinet", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Sloping Writing Box", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Casket", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Coverlet", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Pendant with Bezoar Stone", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Carpet", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Cabinet", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Chess and Backgammon Board", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Cup", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Salt-cellar", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
+                    new ItemTypes { Name = "Candlestick", Material = "-", MinimunQuantity = 0, MaximunQuantity = 1, MinimunPrice = 100.0f, MaximunPrice = 200.0f },
                 }
             },
             {
                 Culture.Asian, new List<ItemTypes>
                 {
-                    new ItemTypes { Name = "Spoon", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Cloak", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Dish", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Ewer with Silver Mounting", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Cup with Travelling Case", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Shield", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Chest with Domed Lid", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Monk's Cup Ewer", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Octogonal Ewer", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Bowl", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Base", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Jar", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Hexagonal Jar", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Kendi", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Large Bottle Case", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
+                    new ItemTypes { Name = "Backgammon Board", Material = "Ivory", MinimunQuantity = 3, MaximunQuantity = 7, MinimunPrice = 10.0f, MaximunPrice = 25.0f },
                 }
             },
 

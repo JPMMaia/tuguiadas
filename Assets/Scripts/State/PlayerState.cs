@@ -11,12 +11,14 @@ namespace State
         public int Food;
         public int AmmoCapacity = 500;
         public int Ammo;
-        public float CrewMaxHealth = 500;
+        public float CrewMaxHealth = 100;
         public float CrewHealth;
         public Inventory Inventory;
 
         public void Awake()
         {
+            DontDestroyOnLoad(gameObject);
+
             CurrentMoney = InitialMoney;
         }
 
