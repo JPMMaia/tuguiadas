@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4912970657246296}
   - component: {fileID: 54302856970065080}
   - component: {fileID: 114937677379123278}
+  - component: {fileID: 114875675659919920}
   - component: {fileID: 82350849340170762}
   - component: {fileID: 82406383413426302}
-  - component: {fileID: 114875675659919920}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 4100360131114254}
   - component: {fileID: 33823300421387936}
   - component: {fileID: 23323139385306104}
-  - component: {fileID: 95065100780473924}
   - component: {fileID: 65931003786461534}
   m_Layer: 0
   m_Name: Caravela
@@ -284,15 +283,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115268470900876}
-  m_LocalRotation: {x: -0, y: -0.5005434, z: -0, w: 0.8657115}
-  m_LocalPosition: {x: 22.4, y: 0.000002503395, z: -17.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7, y: 0, z: 2.1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4100360131114254}
   - {fileID: 4373628315349742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -60.072002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23323139385306104
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -753,23 +752,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95065100780473924
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582946306272702}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6c2bc5cdcff252547874f72164da3e1d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114875675659919920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -782,9 +764,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hullIntegrity: 100
-  nCannons: 30
-  cannonBallDamage: 0
-  cannonRof: 1
+  nCannons: 20
+  cannonBallDamage: 4
+  cannonRof: 0.3
   starboard: {fileID: 4623877547025594}
   port: {fileID: 4051203019210344}
   audioCannon: {fileID: 82350849340170762}
@@ -804,8 +786,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
-  fwdSpeed: 7
-  turnSpeed: 1.5
+  fwdSpeed: 9
+  turnSpeed: 3
 --- !u!136 &136251172696961626
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -815,7 +797,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 7
+  m_Radius: 4
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
