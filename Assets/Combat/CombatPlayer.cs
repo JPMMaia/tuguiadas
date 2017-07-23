@@ -27,7 +27,7 @@ public class CombatPlayer : MonoBehaviour {
 
     void FixedUpdate()
     {
-        rigidbody.AddForce(manager.windDirection * manager.windStrength, ForceMode.Acceleration);
+        //rigidbody.AddForce(manager.windDirection * manager.windStrength, ForceMode.Acceleration);
 
 
         rigidbody.AddForce(transform.forward * Input.GetAxis("Vertical") * fwdSpeed);
