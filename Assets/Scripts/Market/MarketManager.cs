@@ -12,6 +12,7 @@ public class MarketManager : MonoBehaviour {
     {
         inv = GameObject.Find("Inventory");
         mark = GameObject.Find("Market");
+        GenerateLootbox();
     }
 	
 	// Update is called once per frame
@@ -30,5 +31,10 @@ public class MarketManager : MonoBehaviour {
     {
         foreach(GameObject item in mark.GetComponent<InventoryManager>().GetSelected())
             item.transform.SetParent(inv.transform);
+    }
+
+    void GenerateLootbox()
+    {
+
     }
 }
