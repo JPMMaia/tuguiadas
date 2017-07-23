@@ -424,8 +424,13 @@ Prefab:
     - target: {fileID: 114105261677387466, guid: 0053f0086d561574fa98f32450ab2750,
         type: 2}
       propertyPath: fogSize
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114105261677387466, guid: 0053f0086d561574fa98f32450ab2750,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 670207933}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0053f0086d561574fa98f32450ab2750, type: 2}
   m_IsPrefabParent: 0
