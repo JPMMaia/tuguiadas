@@ -17,6 +17,8 @@ namespace State
 
         public void Awake()
         {
+            DontDestroyOnLoad(gameObject);
+
             CurrentMoney = InitialMoney;
         }
 
