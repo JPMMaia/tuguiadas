@@ -66,71 +66,79 @@ public class CombatAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (target != null) {
 
-            distToTarget = Vector3.Distance(target.position, transform.position);
-            switch (currentState)
-            {
-                case AIState.Chase:
-                    NavMeshPath p = new NavMeshPath();
-                    agent.CalculatePath(target.position, p);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(p.corners[1] - transform.position, transform.up), .5f * Time.deltaTime);
-
-
-
-                    //agent.destination = target.position;
-
-                    if (distToTarget < ShootingDist)
-                        currentState = AIState.Engaged;
-                    break;
-                case AIState.Engaged:
-
-                    if (distToTarget > ShootingDist)
-                        currentState = AIState.Chase;
-
-                    // Allign ship's broadside
-                    Vector3 toTarget = target.position - transform.position;
-                    ang = Vector3.Angle(toTarget, transform.forward);
-                    if (ang < 90)
-                    {
-                        if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
-                            < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
-                        {
-                            ang = 1;
-                            //Debug.Log("Turning Right");
-                        }
-                        else
-                        {
-                            ang = -1;
-                            //Debug.Log("Turning Left");
-                        }
-                    } else
-                    {
-                        if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
-                            < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
-                        {
-                            ang = -1;
-                            //Debug.Log("Turning Left");
-                        }
-                        else
-                        {
-                            ang = 1;
-                            //Debug.Log("Turning Right");
-                        }
-                    }
-
-                    break;
-
-            }
-        }
-
-        UpdateCooldowns();
-
-        if (hullIntegrity < 0)
+        if (hullIntegrity > 0)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-            if (agent.transform.position.y < 20)
+            if (target != null)
+            {
+
+                distToTarget = Vector3.Distance(target.position, transform.position);
+                switch (currentState)
+                {
+                    case AIState.Chase:
+                        NavMeshPath p = new NavMeshPath();
+                        agent.CalculatePath(target.position, p);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(p.corners[1] - transform.position, transform.up), .5f * Time.deltaTime);
+
+
+
+                        //agent.destination = target.position;
+
+                        if (distToTarget < ShootingDist)
+                            currentState = AIState.Engaged;
+                        break;
+                    case AIState.Engaged:
+
+                        if (distToTarget > ShootingDist)
+                            currentState = AIState.Chase;
+
+                        // Allign ship's broadside
+                        Vector3 toTarget = target.position - transform.position;
+                        ang = Vector3.Angle(toTarget, transform.forward);
+                        if (ang < 90)
+                        {
+                            if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
+                                < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
+                            {
+                                ang = 1;
+                                //Debug.Log("Turning Right");
+                            }
+                            else
+                            {
+                                ang = -1;
+                                //Debug.Log("Turning Left");
+                            }
+                        }
+                        else
+                        {
+                            if (Mathf.Abs(AngleSigned(toTarget, -transform.right, transform.up))
+                                < Mathf.Abs(AngleSigned(toTarget, transform.right, transform.up)))
+                            {
+                                ang = -1;
+                                //Debug.Log("Turning Left");
+                            }
+                            else
+                            {
+                                ang = 1;
+                                //Debug.Log("Turning Right");
+                            }
+                        }
+
+                        break;
+
+                }
+            }
+
+            UpdateCooldowns();
+        } else {
+            GetComponent<NavMeshAgent>().enabled = false;
+            this.transform.position += new Vector3(0.0f, -2.0f * Time.deltaTime, 0.0f);
+            if (transform.position.y < -10)
+            {
+                manager.removeEnemy(gameObject);
                 Destroy(gameObject);
+            }
+                
         }
 	}
 
@@ -207,6 +215,8 @@ public class CombatAI : MonoBehaviour {
                 (fireFromPort ? -1 : 1) * transform.right * Random.Range(15, 25)
                 + transform.up * Random.Range(6, 8) * (distToTarget/ShootingDist)
                 + transform.forward * Random.Range(-2, 2);
+
+            projectile.GetComponent<Projectile>().projDmg = cannonBallDamage;
 
             audioSrc.PlayOneShot(audioSrc.clip, 1);
             Instantiate(muzzleParticle, firePos, sideTransform.rotation);

@@ -89,6 +89,8 @@ public class CombatShip : MonoBehaviour {
 
             projectile.GetComponent<Rigidbody>().velocity = (fireFromPort ? -1 : 1) * transform.right * Random.Range(15, 25) + transform.up * Random.Range(6, 8) + transform.forward*Random.Range(-2,2);
 
+            projectile.GetComponent<Projectile>().projDmg = cannonBallDamage;
+
             audioCannon.PlayOneShot(audioCannon.clip);
             Instantiate(muzzleParticle, firePos, sideTransform.rotation);
             
