@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemReader : MonoBehaviour {
     ArrayList items;
     // Use this for initialization
-    ArrayList Read () {
+    public ArrayList Read () {
         StreamReader inp_stm = new StreamReader("items.csv");
         string[] tmp;
 
