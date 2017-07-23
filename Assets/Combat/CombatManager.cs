@@ -54,12 +54,12 @@ public class CombatManager : MonoBehaviour {
 
         if (enemyList.Count <= 0)
         {
-            Debug.Log("Terminar Scene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Default");
         }
 
         if (playerTarget == null)
         {
-            Debug.Log("Terminar Scene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
 		
 	}
