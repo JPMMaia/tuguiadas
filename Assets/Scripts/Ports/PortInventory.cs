@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Ports
 {
-    public class PortInventory : MonoBehaviour, IEnumerable<Currency.Item>
+    public class PortInventory : IEnumerable<Currency.Item>
     {
         private readonly List<Currency.Item> _items = new List<Currency.Item>();
 

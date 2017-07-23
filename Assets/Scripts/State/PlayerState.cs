@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace State
@@ -14,8 +13,7 @@ namespace State
         public int Ammo;
         public float CrewMaxHealth = 500;
         public float CrewHealth;
-        private Inventory _inventory = new Inventory();
-
+        private Inventory Inventory;
         public void Awake()
         {
             CurrentMoney = InitialMoney;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace State
 {
-    public class Inventory : MonoBehaviour, IEnumerable<Currency.Item>
+    public class Inventory : MonoBehaviour, IEnumerable<Currency.Item> 
     {
         private readonly List<Currency.Item> _inventory = new List<Currency.Item>();
 
