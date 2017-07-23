@@ -13,23 +13,24 @@ namespace State
         public int Ammo;
         public float CrewMaxHealth = 500;
         public float CrewHealth;
-        private Inventory Inventory;
+        public Inventory Inventory;
+
         public void Awake()
         {
             CurrentMoney = InitialMoney;
         }
 
-        public void Buy(ArrayList list)
+        public void Buy(List<Item> list)
         {
-            foreach (Item item in list)
+            foreach (var item in list)
                 CurrentMoney -= item.ValueBuy;
 
             //TODO: add list to the inventory
         }
 
-        public void Sell(ArrayList list)
+        public void Sell(List<Item> list)
         {
-            foreach (Item item in list)
+            foreach (var item in list)
                 CurrentMoney += item.ValueSell;
 
             //TODO: remove list to the inventory
