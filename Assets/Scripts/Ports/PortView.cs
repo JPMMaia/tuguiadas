@@ -1,7 +1,6 @@
 ﻿using System;
 using Collision;
 using Core;
-using UnityEngine;
 using Currency;
 using State;
 
@@ -50,14 +49,14 @@ namespace Ports
 
         private void RangeArea_OnEnter(object sender, TriggerCollider.CollisionEventArgs e)
         {
-            Debug.Log("Enter port!");
+            //Debug.Log("Enter port!");
 
             // Present merchant view:
             Application.Presenter.MerchantPresenter.Present(Culture, Application.Model.PlayerState.Inventory, Inventory);
         }
         private void RangeArea_OnExit(object sender, TriggerCollider.CollisionEventArgs e)
         {
-            Debug.Log("Exit port!");
+            //Debug.Log("Exit port!");
         }
     }
 }
