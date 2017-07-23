@@ -15,6 +15,8 @@ namespace State
         public float CrewHealth;
         public Inventory Inventory;
 
+        public float FoodDecrementScaler;
+
         public void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -22,20 +24,10 @@ namespace State
             CurrentMoney = InitialMoney;
         }
 
-        public void Buy(List<Item> list)
+        public void FixedUpdate()
         {
-            foreach (var item in list)
-                CurrentMoney -= item.ValueBuy;
-
-            //TODO: add list to the inventory
-        }
-
-        public void Sell(List<Item> list)
-        {
-            foreach (var item in list)
-                CurrentMoney += item.ValueSell;
-
-            //TODO: remove list to the inventory
+            // Decrease food along time:
+            Food -= FoodDecrementScaler * Time.fixedDeltaTime;
         }
     }
 }
